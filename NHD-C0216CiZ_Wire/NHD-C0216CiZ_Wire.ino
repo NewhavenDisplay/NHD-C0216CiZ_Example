@@ -19,27 +19,22 @@
 
 #include <Wire.h>
 
-int RES = 22;
+int _RES = 22;
 
-/********Arduino Mega********/
-int ASDA = A4;
-int ASCL = A5;
-/********Arduino Mega********/
+unsigned char _text1[] = {"Newhaven Display"};
+unsigned char _text2[] = {"  NHD-C0216CiZ  "};
+unsigned char _text3[] = {" I2C Interface  "};
+unsigned char _text4[] = {"Please enjoy! :)"};
 
-unsigned char text1[] = {"Newhaven Display"};
-unsigned char text2[] = {"  NHD-C0216CiZ  "};
-unsigned char text3[] = {" I2C Interface  "};
-unsigned char text4[] = {"Please enjoy! :)"};
-
-const char slave2w = 0x3E;
-const char comsend = 0x00;
-const char datasend = 0x40;
-const char line2 = 0xC0;
+const char _slave2w = 0x3E;
+const char _comsend = 0x00;
+const char _datasend = 0x40;
+const char _line2 = 0xC0;
 
 void show(unsigned char *text)
 {
-  Wire.beginTransmission(slave2w);
-  Wire.write(datasend);
+  Wire.beginTransmission(_slave2w);
+  Wire.write(_datasend);
   for (int n = 0; n < 16; n++)
   {
     Wire.write(*text);
@@ -50,16 +45,16 @@ void show(unsigned char *text)
 
 void nextline(void)
 {
-  Wire.beginTransmission(slave2w);
-  Wire.write(comsend);
-  Wire.write(line2);
+  Wire.beginTransmission(_slave2w);
+  Wire.write(_comsend);
+  Wire.write(_line2);
   Wire.endTransmission();
 }
 
 void CiZ_init()
 {
-  Wire.beginTransmission(slave2w);
-  Wire.write(comsend);
+  Wire.beginTransmission(_slave2w);
+  Wire.write(_comsend);
   Wire.write(0x38); // Function set: 8-bit data
   delay(10);
   Wire.write(0x39); // Function set: 8-bit data + instruction table 1
@@ -78,13 +73,8 @@ void CiZ_init()
 
 void setup()
 {
-  pinMode(RES, OUTPUT);
-  pinMode(ASCL, OUTPUT);
-  pinMode(ASDA, OUTPUT);
-  digitalWrite(RES, HIGH);
-  delay(10);
-  digitalWrite(ASCL, LOW);
-  digitalWrite(ASDA, LOW);
+  pinMode(_RES, OUTPUT);
+  digitalWrite(_RES, HIGH);
   delay(10);
 
   Wire.begin();
@@ -93,14 +83,14 @@ void setup()
 void loop()
 {
   CiZ_init();
-  show(text1);
+  show(_text1);
   nextline();
-  show(text2);
+  show(_text2);
   delay(1000);
 
   CiZ_init();
-  show(text3);
+  show(_text3);
   nextline();
-  show(text4);
+  show(_text4);
   delay(1000);
 }

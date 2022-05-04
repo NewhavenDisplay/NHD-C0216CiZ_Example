@@ -6,7 +6,7 @@
 / Newhaven Display invests time and resources providing this open source code,
 / Please support Newhaven Display by purchasing products from Newhaven Display!
 
-* Copyright (c) 2019, Newhaven Display International
+* Copyright (c) 2022, Newhaven Display International
 *
 * This code is provided as an example only and without any warranty by Newhaven Display.
 * Newhaven Display accepts no responsibility for any issues resulting from its use.

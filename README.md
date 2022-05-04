@@ -1,7 +1,7 @@
 # NHD-C0216CiZ_Example
 
 Program for writing to Newhaven Display's Character Chip-On-Glass NHD-C0216CiZ Series with ST7032i-0D/AiP31032 controller. 
-This code is written for the Arduino Uno/Mega using the Arduino Wire.h Library. 
+This code is written for the Arduino Uno/Mega using the [Arduino Wire.h Library](https://www.arduino.cc/reference/en/language/functions/communication/wire/). 
 
 
 Purchase a sample from our Product Pages linked below!

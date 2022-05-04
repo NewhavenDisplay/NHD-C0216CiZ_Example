@@ -19,7 +19,7 @@
 
 #include <Wire.h>
 
-int _RES = 22;
+int _RES = 8;
 
 unsigned char _text1[] = {"Newhaven Display"};
 unsigned char _text2[] = {"  NHD-C0216CiZ  "};

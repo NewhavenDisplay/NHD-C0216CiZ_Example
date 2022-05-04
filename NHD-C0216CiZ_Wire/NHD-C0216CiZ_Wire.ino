@@ -1,7 +1,7 @@
 /*****************************************************************************
  *
-/ Program for writing to NHD-C0216CiZ display series with the ST7032i Controller.
-/ This code is written for the Arduino Uno R3 using I2C Interface
+/ Program for writing to NHD-C0216CiZ display series with the ST7032i/AiP31032 Controller.
+/ This code is written for the Arduino Uno R3 / Mega using I2C Interface
 /
 / Newhaven Display invests time and resources providing this open source code,
 / Please support Newhaven Display by purchasing products from Newhaven Display!
